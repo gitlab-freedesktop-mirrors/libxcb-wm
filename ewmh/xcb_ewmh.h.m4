@@ -357,7 +357,6 @@ typedef struct {
  *
  * @param c The connection to the X server
  * @param ewmh The information relative to EWMH
- * @param screen_nbr The screen number
  * @return The cookies corresponding to EWMH atoms
  */
 xcb_intern_atom_cookie_t *xcb_ewmh_init_atoms(xcb_connection_t *c,
@@ -653,6 +652,7 @@ xcb_void_cookie_t xcb_ewmh_set_client_list_checked(xcb_ewmh_connection_t *ewmh,
  * Window Manager.
  *
  * @param ewmh The information relative to EWMH.
+ * @param screen_nbr The screen number
  * @return The _NET_CLIENT_LIST cookie of the GetProperty request.
  */
 xcb_get_property_cookie_t xcb_ewmh_get_client_list_unchecked(xcb_ewmh_connection_t *ewmh,
@@ -664,6 +664,7 @@ xcb_get_property_cookie_t xcb_ewmh_get_client_list_unchecked(xcb_ewmh_connection
  *
  * @see xcb_ewmh_get_client_list_unchecked
  * @param ewmh The information relative to EWMH.
+ * @param screen_nbr The screen number
  * @return The _NET_CLIENT_LIST cookie of the GetProperty request.
  */
 xcb_get_property_cookie_t xcb_ewmh_get_client_list(xcb_ewmh_connection_t *ewmh,
@@ -739,6 +740,7 @@ xcb_void_cookie_t xcb_ewmh_set_client_list_stacking_checked(xcb_ewmh_connection_
  * updated by the Window Manager.
  *
  * @param ewmh The information relative to EWMH
+ * @param screen_nbr The screen number
  * @return The _NET_CLIENT_LIST_STACKING cookie of the GetProperty request
  */
 xcb_get_property_cookie_t xcb_ewmh_get_client_list_stacking_unchecked(xcb_ewmh_connection_t *ewmh,
@@ -1173,6 +1175,7 @@ xcb_void_cookie_t xcb_ewmh_set_desktop_names_checked(xcb_ewmh_connection_t *ewmh
  *        window property
  *
  * @param ewmh The information relative to EWMH
+ * @param screen_nbr The screen number
  * @return The _NET_DESKTOP_NAMES cookie of the GetProperty request
  */
 xcb_get_property_cookie_t xcb_ewmh_get_desktop_names_unchecked(xcb_ewmh_connection_t *ewmh,
@@ -1447,7 +1450,7 @@ xcb_void_cookie_t xcb_ewmh_set_supporting_wm_check_checked(xcb_ewmh_connection_t
  *        root window property
  *
  * @param ewmh The information relative to EWMH
- * @param screen_nbr The screen number
+ * @param window The window created by the WM
  * @return The _NET_SUPPORTING_WM_CHECK cookie of the GetProperty request
  */
 xcb_get_property_cookie_t xcb_ewmh_get_supporting_wm_check_unchecked(xcb_ewmh_connection_t *ewmh,
